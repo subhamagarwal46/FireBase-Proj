@@ -1,0 +1,32 @@
+<div class="label" #label></div>
+<div class="page main">
+    <div class="container">
+        <div class="moveable" #target>
+            <span>Sample<br />box</span>
+        </div>
+        <div class="buttons able">
+            <a data-able="scalable" [class]="scalable ? 'selected' : ''" (click)="clickScalable()">
+                Scalable
+            </a>
+            <a data-able="resizable" [class]="resizable ? 'selected' : ''" (click)="clickResizable()">Resizable
+            </a>
+            <a data-able="warpable" [class]="warpable ? 'selected' : ''" (click)="clickWarpable()">Warpable
+            </a>
+        </div>
+        <!-- <p class="text-center">
+            An Angular Component that create Moveable, Draggable, Resizable, Scalable,
+            Rotatable, Warpable, Pinchable.
+        </p> -->
+        <p class="text-center">
+            Select a mode among scalable, resizable and warpable and drag the box to see the difference.
+        </p>
+
+        <ngx-moveable #moveable [target]="target" [draggable]="true" [origin]="false" [rotatable]="true"
+            [pinchable]="true" [scalable]="scalable" [resizable]="resizable" [warpable]="warpable" [keepRatio]="false"
+            [throttleDrag]="1" [throttleScale]="0.01" [throttleRotate]="0.2" [throttleResize]="1"
+            (drag)="onDrag($event)" (resize)="onResize($event)" (scale)="onScale($event)" (warp)="onWarp($event)"
+            (rotate)="onRotate($event)" (pinch)="onPinch($event)" (dragEnd)="onEnd()" (resizeEnd)="onEnd()"
+            (scaleEnd)="onEnd()" (warpEnd)="onEnd()" (rotateEnd)="onEnd()" (pinchEnd)="onEnd()">
+        </ngx-moveable>
+    </div>
+</div>

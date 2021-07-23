@@ -1,0 +1,19 @@
+a:not([href]):not([tabindex]) {
+    color: #007bff;
+    font-weight: 500;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:not([href]):not([tabindex]):hover {
+    text-decoration: underline;
+}
+
+.container {
+    position: relative;
+    top: 20%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+}
+
